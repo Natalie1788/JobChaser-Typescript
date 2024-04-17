@@ -1,15 +1,17 @@
+
 import { useTheme } from "./ThemeContext";
 
 
 
-function About() {
+function Homepage() {
   const {isDark} = useTheme()
+  
     return(
     <div>
-      <h1>About</h1>
-      <p>Welcome to the About Page</p>
+      <h1>Home Page</h1>
+      <p>Welcome to the Home Page</p>
     </div>
     )
 }
 
-export default About;
+export default Homepage;
