@@ -1,13 +1,13 @@
 import './App.css';
-import React, { createContext, useState, useContext } from 'react';
+import { createContext, useContext } from 'react';
 import Navbar from './components/Navbar';
 import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom';
-import Homepage from './components/Homepage';
+import Homepage from './components/HomePage';
 import About from './components/About';
 import Contact from './components/Contact';
 import Signup from './components/Signup';
 import Signin from './components/Signin';
-import Joblist from "./components/Jobslist";
+import Joblist from "./components/JobList";
 import { useTheme } from './components/ThemeContext';
 
 interface User {
