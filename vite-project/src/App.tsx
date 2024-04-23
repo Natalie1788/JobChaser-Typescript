@@ -1,5 +1,5 @@
 import './App.css';
-import { createContext, useContext } from 'react';
+import { useContext, useCallback } from 'react';
 import Navbar from './components/Navbar';
 import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom';
 import Homepage from './components/HomePage';
@@ -9,16 +9,8 @@ import Signup from './components/Signup';
 import Signin from './components/Signin';
 import Joblist from "./components/JobList";
 import { useTheme } from './components/ThemeContext';
+import { AuthContext } from './components/AuthContext';
 
-interface User {
-  // Определите тип данных для пользователя, если это необходимо
-}
-
-interface AuthContextType {
-  user: User | null;
-}
-
-export const AuthContext = createContext<AuthContextType>({ user: null });
 
 function ProtectedRoute() {
   const authContext = useContext(AuthContext);
@@ -27,9 +19,10 @@ function ProtectedRoute() {
   return isAuthenticated ? <Outlet /> : <Navigate to="/signin" replace />;
 }
 
+
 function App() {
-  const authContext = useContext(AuthContext);
-  const isAuthenticated = authContext && authContext.user !== null;
+//const authContext = useContext(AuthContext);
+  //const isAuthenticated = authContext && authContext.user !== null;
  
   const { isDark } = useTheme();
   
@@ -45,7 +38,9 @@ function App() {
           <Route path="/signin" element={<Signin />}/>
           <Route path="/joblist" element={<ProtectedRoute/>}>
             <Route path="/joblist" element={<Joblist/>}/>
-          </Route>
+            </Route>
+           
+         
         </Routes>   
       </div>
     </BrowserRouter>

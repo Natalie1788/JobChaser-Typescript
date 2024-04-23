@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+
 import { Link } from 'react-router-dom';
 import styles from "../styles/Navbar.module.css"
 import logo from "../images/logo.png"
@@ -32,8 +32,8 @@ function Navbar() {
         <li><Link to="/about"  style={{textDecoration:"none"}}><span className={styles.itemtext}>About</span></Link></li>
         <li><Link to="/contact"  style={{textDecoration:"none"}}><span className={styles.itemtext}>Contact</span></Link></li>
         <li><Link to="/signup"  style={{textDecoration:"none"}}><span className={styles.itemtext}>SingUp</span></Link></li>
-        <li><button onClick={handleSignOut}>Sign Out</button></li>
-        <li><button style={{marginLeft: "20px"}} onClick={toggleTheme}>Dark/Light</button></li>
+        <li><button className={`${isDark ? "" : "light"}`} onClick={handleSignOut}>Sign Out</button></li>
+        <li><button style={{marginLeft: "20px", backgroundColor: "orange"}} onClick={toggleTheme}>Dark/Light</button></li>
       </ul>
     </nav>
   );

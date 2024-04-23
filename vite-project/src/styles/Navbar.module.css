@@ -1,0 +1,26 @@
+.menu {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+    /*gap: 100px;*/
+  
+}
+
+.itemtext {
+   color: orange;
+    margin-right: 50px;
+    font-size: 1.5rem;
+}
+.itemtext.dark {
+    color: orange;
+}
+.itemtext.light {
+    color: rgb(55, 38, 7);
+}
+.list {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 70px;
+}

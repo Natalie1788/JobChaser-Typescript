@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../app/store'; // Импортируем тип RootState из вашего store
-import { fetchJob, setKeywordFilter, setCategoryFilter } from '../slice/jobSlice';
+import { RootState } from "../store/store";
+import { fetchJob, setKeywordFilter, setCategoryFilter, resetFilter } from '../slice/jobSlice';
 import search from "../images/search1.png"
 import { useTheme } from './ThemeContext';
 import { Job } from '../slice/jobSlice';
-import { JobState } from '../slice/jobSlice';
+
 
 function JobList() {
   const { isDark } = useTheme()
@@ -35,6 +35,10 @@ function JobList() {
     dispatch(setCategoryFilter(category));
   };
 
+  const resetCategories = () => {
+    dispatch(resetFilter());
+  }
+
   return (
     <div className={`job-container ${isDark ? "dark" : "light"}`}>
     <div className="input-div">
@@ -48,11 +52,12 @@ function JobList() {
   </div>
   
 <div className='categories'>
-  <button onClick={() => handleCategoryChange('Data/IT')}>Data/IT</button>
-  <button onClick={() => handleCategoryChange('Hälso- och sjukvård')}>Hälso- och sjukvård</button>
-  <button onClick={() => handleCategoryChange('Transport, distribution, lager')}>Transport, distribution, lager</button>
-  <button onClick={() => handleCategoryChange('Pedagogik')}>Pedagogik</button>
-  <button onClick={() => handleCategoryChange('Industriell tillverkning')}>Industriell tillverkning</button>
+  <button className={`${isDark ? "" : "light"}`} onClick={() => handleCategoryChange('Data/IT')}>Data/IT</button>
+  <button className={`${isDark ? "" : "light"}`} onClick={() => handleCategoryChange('Hälso- och sjukvård')}>Hälso- och sjukvård</button>
+  <button className={`${isDark ? "" : "light"}`} onClick={() => handleCategoryChange('Transport, distribution, lager')}>Transport, distribution, lager</button>
+  <button className={`${isDark ? "" : "light"}`} onClick={() => handleCategoryChange('Pedagogik')}>Pedagogik</button>
+  <button className={`${isDark ? "" : "light"}`} onClick={() => handleCategoryChange('Industriell tillverkning')}>Industriell tillverkning</button>
+  <button style={{marginLeft: "20px", backgroundColor: "orange"}} onClick={() => resetCategories()}>Reset</button>
 </div>
 
       <div>

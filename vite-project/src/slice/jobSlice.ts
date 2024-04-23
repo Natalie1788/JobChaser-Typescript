@@ -1,5 +1,6 @@
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { RootState } from "../store/store";
 
 export const fetchJob = createAsyncThunk<Job[], void>(
   'job/fetchJob',
@@ -15,24 +16,24 @@ export const fetchJob = createAsyncThunk<Job[], void>(
 );
 
 export interface Job {
-    headline: string; // Название вакансии
+    headline: string;
     employer: {
-      name: string; // Название компании
+      name: string; 
     };
     description: {
-      text: string; // Описание вакансии
+      text: string; 
     };
-    webpage_url: string; // URL веб-страницы с дополнительной информацией о вакансии
+    webpage_url: string; 
     occupation_field: {
-      label: string; // Область деятельности
+      label: string; 
     };
     working_hours_type: {
-      label: string; // Тип рабочих часов (полный рабочий день, частичная занятость и т. д.)
-    };
+      label: string;
+    }
     workplace_address: {
-      municipality: string; // Муниципалитет, где находится место работы
+      municipality: string;
     };
-    // Другие поля, если они присутствуют
+   
   }
 
 export interface JobState {
@@ -66,30 +67,34 @@ const jobSlice = createSlice({
     },
     setCategoryFilter: (state, action: PayloadAction<string>) => {
       state.filter.category = action.payload;
+    },
+    resetFilter: (state) => {
+      state.filter.category = "",
+      state.filter.keyword = ""
     }
     }, 
    
-  extraReducers: (builder) => {
+  extraReducers: (builder: any) => {
     builder
-      .addCase(fetchJob.pending, (state) => {
+      .addCase(fetchJob.pending, (state: JobState) => {
         state.loading = true;
         state.error = null;
       })
-      .addCase(fetchJob.fulfilled, (state, action) => {
+      .addCase(fetchJob.fulfilled, (state: JobState, action: any) => {
         state.loading = false;
         state.job = action.payload;
         state.filteredJob = action.payload;
       })
-      .addCase(fetchJob.rejected, (state, action) => {
+      .addCase(fetchJob.rejected, (state: JobState, action: PayloadAction<string | null>) => {
         state.loading = false;
-        state.error = action.error.message;
+        state.error = action.payload;
       });
   }
 });
 
-export const { setKeywordFilter, setCategoryFilter } = jobSlice.actions;
+export const { setKeywordFilter, setCategoryFilter, resetFilter } = jobSlice.actions;
 
-export const selectLoading = state => state.job.loading;
-export const selectError = state => state.job.error;
+export const selectLoading = (state: RootState) => state.job.loading;
+export const selectError = (state: RootState) => state.job.error;
 
 export default jobSlice.reducer;

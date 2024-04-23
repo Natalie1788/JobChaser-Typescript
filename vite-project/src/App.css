@@ -1,42 +1,136 @@
-#root {
-  max-width: 1280px;
+/*-------------mina inställningar--------------------------*/
+.job-card {
+  width: 20vw;
+  height: auto;
+  background-color: rgb(53, 68, 72);
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid white;
+  margin-bottom: 10px;
+}
+.first-text {
+  text-decoration: underline;
+  font-weight: 700;
+  color: rgb(246, 255, 117);
+  margin-right: 5px;
+}
+.input-field {
+  margin-bottom: 20px;
+  width: 15vw;
+  border-radius: 5px;
+  height: 25px;
+}
+.input-div {
+text-align: center;
+  position: relative;
+
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.search-image {
+  position: absolute;
+  /*top: 0; 
+  right: 0; */
+  transform: translateX(-100%); 
+  width: 35px; 
+  margin-top: 2px;
+  /*height: 25px;*/
+}
+
+.job-item {
+  border: 2px solid rgb(255, 255, 255);
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: rgb(238, 238, 238);
+  border-radius: 8px;
+  border: 1px solid gray;
+  width: 80%;
+  margin-inline: auto;
+}
+.description {
+  height: 150px;
+  overflow: hidden;
+ 
+}
+ul {
+  list-style: none;
+}
+
+
+
+form {
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 30%;
+  background-color: rgb(34, 34, 44);
+  padding: 30px;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 8px;
+}
+.input-form {
+  margin-left: 20px;
+  margin-bottom: 15px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.more-info {
+color: orange;
+text-decoration: none;
+  margin-left: 10px;
+ 
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
 
-.card {
-  padding: 2em;
+/*---------------theme-----------------------*/
+.app.dark {
+  background-color: #222;
+  height: 100vh;
+  color: white;
 }
-
-.read-the-docs {
-  color: #888;
+.app.dark nav{
+  background-color: #222;
 }
+.job-container.dark {
+  background-color: #222;
+  height: auto;
+  color: rgb(255, 255, 255);
+}
+.job-item.dark {
+  background-color: rgb(34, 34, 44);
+}
+.app.light {
+  background-color: #ffffff;
+  height: 100vh;
+  color: #222;
+}
+.app.light nav {
+  background-color: #ffffff;
+}
+.input-field.dark {
+  background-color: #434343;
+}
+/*.logoimg.dark {
+  background-image: url("images/logoDark.png");
+}
+.logoimg.light {
+  background-image: url("images/logo.png");
+}
+.logoimg {
+  width: 200px;
+  height: 200px;
+  background-color: aquamarine;
+}*/
