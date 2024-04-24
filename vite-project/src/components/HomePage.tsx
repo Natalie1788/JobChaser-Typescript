@@ -9,7 +9,7 @@ function Homepage() {
     return(
     <div>
       <h1>Home Page</h1>
-      <p>Welcome to the Home Page</p>
+      <p className="centered">Welcome to the Home Page</p>
     </div>
     )
 }

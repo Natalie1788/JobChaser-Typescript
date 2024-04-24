@@ -7,7 +7,7 @@ function About() {
     return(
     <div>
       <h1>About</h1>
-      <p>Welcome to the About Page</p>
+      <p className="centered">Welcome to the About Page</p>
     </div>
     )
 }

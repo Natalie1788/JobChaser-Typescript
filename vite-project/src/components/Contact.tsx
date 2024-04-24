@@ -8,7 +8,7 @@ function Contact() {
     return(
     <div>
       <h1>Our contacts</h1>
-      <p>Welcome to the Contact Page</p>
+      <p className="centered">Welcome to the Contact Page</p>
     </div>
     )
 }

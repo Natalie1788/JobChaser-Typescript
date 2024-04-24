@@ -57,14 +57,14 @@ function JobList() {
   <button className={`${isDark ? "" : "light"}`} onClick={() => handleCategoryChange('Transport, distribution, lager')}>Transport, distribution, lager</button>
   <button className={`${isDark ? "" : "light"}`} onClick={() => handleCategoryChange('Pedagogik')}>Pedagogik</button>
   <button className={`${isDark ? "" : "light"}`} onClick={() => handleCategoryChange('Industriell tillverkning')}>Industriell tillverkning</button>
-  <button style={{marginLeft: "20px", backgroundColor: "orange"}} onClick={() => resetCategories()}>Reset</button>
+  <button className='btn-theme' onClick={() => resetCategories()}>Reset</button>
 </div>
 
       <div>
         {loading ? (
-          <p>Loading...</p>
+          <p className='centered'>Loading...</p>
         ) : error ? (
-          <p>{error}</p>
+          <p className='centered'>{error}</p>
         ) : (
           <>
           

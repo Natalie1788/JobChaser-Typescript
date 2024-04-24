@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import  {createUserWithEmailAndPassword} from "firebase/auth";
 import { auth } from "./../../firebase-config";
+import { useTheme } from "./ThemeContext";
 
 
 interface SignUpFormData {
@@ -11,6 +12,7 @@ interface SignUpFormData {
   }
   
   function SignUpForm() {
+    const {isDark} = useTheme()
     const navigate = useNavigate();
   
     const {
@@ -37,7 +39,7 @@ interface SignUpFormData {
   };
 
   return (
-    <form onSubmit={handleSubmit(formSubmit)}>
+    <form className={`form ${isDark ? "dark" : "light"}`} onSubmit={handleSubmit(formSubmit)}>
       <div>
         <label htmlFor="email">Email:</label>
         <input className="input-form"

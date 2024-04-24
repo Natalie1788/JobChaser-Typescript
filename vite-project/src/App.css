@@ -48,7 +48,6 @@ text-align: center;
 }
 
 .job-item {
-  border: 2px solid rgb(255, 255, 255);
   margin-bottom: 20px;
   padding: 20px;
   background-color: rgb(238, 238, 238);
@@ -66,15 +65,23 @@ ul {
   list-style: none;
 }
 
+.centered {
+  text-align: center;
+}
 
-
-form {
+.form {
   margin: 0 auto;
   width: 30%;
-  background-color: rgb(34, 34, 44);
   padding: 30px;
-  border: 2px solid rgb(255, 255, 255);
   border-radius: 8px;
+}
+.form.dark {
+  background-color: rgb(34, 34, 44);
+  border: 2px solid rgb(255, 255, 255);
+}
+.form.light {
+  background-color: rgb(238, 238, 238);
+  border: 1px solid gray;
 }
 .input-form {
   margin-left: 20px;
@@ -101,13 +108,12 @@ text-decoration: none;
   height: 100vh;
   color: white;
 }
-.app.dark nav{
-  background-color: #222;
-}
+
 .job-container.dark {
   background-color: #222;
   height: auto;
   color: rgb(255, 255, 255);
+  margin: 0;
 }
 .job-item.dark {
   background-color: rgb(34, 34, 44);
@@ -117,9 +123,7 @@ text-decoration: none;
   height: 100vh;
   color: #222;
 }
-.app.light nav {
-  background-color: #ffffff;
-}
+
 .input-field.dark {
   background-color: #434343;
 }
@@ -134,3 +138,19 @@ text-decoration: none;
   height: 200px;
   background-color: aquamarine;
 }*/
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 8px;
+  border: 1px solid gray;
+  margin-bottom: 20px;
+}
+.menu.light {
+  background-color: rgb(238, 238, 238);
+}
+.menu.dark {
+  background-color:rgb(34, 34, 44);
+}

@@ -34,7 +34,7 @@ button {
   
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #bdbdbd;
   background-color: #ffb62f;
 }
 button:focus,
@@ -53,10 +53,20 @@ button.light {
   transition: border-color 0.25s;
   border: 1px solid gray;
 }
+.btn-theme {
+  background-color: transparent;
+  border: 2px solid orange;
+  color: orange;
+  margin-inline: 10px;
+}
+.btn-theme:hover {
+  background-color: gray;
+  color: #213547;
+}
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
+    color: #192733;
     background-color: #ffffff;
   }
   a:hover {

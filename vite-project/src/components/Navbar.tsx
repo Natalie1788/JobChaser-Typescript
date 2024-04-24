@@ -24,7 +24,7 @@ function Navbar() {
   };
 
   return (
-    <nav className={styles.menu}>
+    <nav className={`menu ${isDark ? "dark" : "light"}`}>
      <img src={isDark ? logoDark : logo} alt="logo" />
       <ul className={styles.list}>
         <li><Link to="/" style={{textDecoration:"none"}}><span className={styles.itemtext}>Home</span></Link></li>
@@ -33,7 +33,7 @@ function Navbar() {
         <li><Link to="/contact"  style={{textDecoration:"none"}}><span className={styles.itemtext}>Contact</span></Link></li>
         <li><Link to="/signup"  style={{textDecoration:"none"}}><span className={styles.itemtext}>SingUp</span></Link></li>
         <li><button className={`${isDark ? "" : "light"}`} onClick={handleSignOut}>Sign Out</button></li>
-        <li><button style={{marginLeft: "20px", backgroundColor: "orange"}} onClick={toggleTheme}>Dark/Light</button></li>
+        <li><button className='btn-theme' onClick={toggleTheme}>Dark/Light</button></li>
       </ul>
     </nav>
   );
